@@ -1,7 +1,5 @@
 using System;
-// comment out the
-/* comment */
-namespace Oop;
+namespace alaa;
 public abstract class Person{
     public string Name;
     public int Age;
