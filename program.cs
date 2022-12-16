@@ -23,7 +23,21 @@ public class Student : Person{
     }
 }
 
+} 
+public class Staff :Person{
+
+public double Salary;
+public int JoinYear;
+public Staff (string name,int age,double salary ,int joinyear):base(name,age){
+Salary=salary;
+JoinYear=joinyear;
 }
+public override void Print(){
+        Console.WriteLine($"My name is{Name},my age is{Age},and my salary is {Salary}");
+    }
+
+}
+
 public class Database{
     public Person[] People=new Person[50];
     private int currentIndex=0;
@@ -40,19 +54,6 @@ public class Database{
     }
 }
 
-public class Staff :Person{
-
-public double Salary;
-public int JoinYear;
-public Staff (string name,int age,double salary ,int joinyear):base(name,age){
-Salary=salary;
-JoinYear=joinyear;
-}
-public override void Print(){
-        Console.WriteLine($"My name is{Name},my age is{Age},and my salary is {Salary}");
-    }
-
-}
 public  class Program{
 
 private static void Main(){
@@ -89,13 +90,22 @@ private static void Main(){
         var staff =new Staff(name,age,salary,joinyear);
         database.AddStaff(staff);
         break;
-        case 3:
-            database.PrintAll();
+       case 3:
+        Console.WriteLine("Enter the Name :  ");
+        String name = Console.ReadLine();
+        Console.WriteLine("Enter the Age :  ");
+        int age = int.Parse( Console.ReadLine());
+        var person =new Person(name,age);
+        data_b.AddPerson(person);
+
+         break;
+         case 4:
+         data_b.print_everthing();
+         break;
+         default:
+         Console.WriteLine("Error input !!!!!!!!!");
+         break;
         
-        break;
-        default:
-        return;
-    }
     }
 
 }
