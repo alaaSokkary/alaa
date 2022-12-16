@@ -105,9 +105,8 @@ private static void Main(){
          default:
          Console.WriteLine("Error input !!!!!!!!!");
          break;
-          }
-      }
-
-	  }
-	  }
+    }
+    }
+}
+}
 }
